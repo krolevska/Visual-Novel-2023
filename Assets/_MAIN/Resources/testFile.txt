@@ -1,0 +1,6 @@
+This is a random line of dialogue here
+Kate "(This is a thought)"
+Kate "command(args go here)"
+Kate "This is a dialogue" command(args go here)
+command(more args), argCom(yes another one)
+command("This is an argument")
