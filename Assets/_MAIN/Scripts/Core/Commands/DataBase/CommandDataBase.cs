@@ -18,8 +18,8 @@ namespace Commands
             {
                 database.Add(commandName, command);
             }
-            else
-                Debug.LogError($"Command already exists in the database '{commandName}'");
+            //else
+                //Debug.LogError($"Command already exists in the database '{commandName}'");
 
         }
 
@@ -28,7 +28,7 @@ namespace Commands
 
             if (!database.ContainsKey(commandName))
             {
-                Debug.LogError($"Command '{commandName}' doesn't exint in the database!");
+                //Debug.LogError($"Command '{commandName}' doesn't exint in the database!");
                 return null;
             }
             return database[commandName];

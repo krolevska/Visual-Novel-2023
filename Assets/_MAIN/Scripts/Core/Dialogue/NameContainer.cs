@@ -17,9 +17,12 @@ namespace Dialoque
         // Start is called before the first frame update
         public void Show(string nameToShow = "")
         {
+            
             root.SetActive(true);
             if (nameToShow != string.Empty)
+            {
                 nameText.text = nameToShow;
+            }
         }
 
         // Update is called once per frame
@@ -28,5 +31,9 @@ namespace Dialoque
             root.SetActive(false);
 
         }
+
+        public void SetNameColor(Color color) => nameText.color = color;
+        public void SetNameFont(TMP_FontAsset font) => nameText.font = font;
+
     }
 }

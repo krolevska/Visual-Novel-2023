@@ -16,21 +16,35 @@ MonoBehaviour:
   - name: Stella
     alias: s
     characterType: 1
-    nameColor: {r: 0, g: 0.90713024, b: 1, a: 0}
-    dialogueColor: {r: 1, g: 1, b: 1, a: 0}
+    nameColor: {r: 0, g: 0.90713024, b: 1, a: 1}
+    dialogueColor: {r: 0, g: 1, b: 1, a: 1}
     nameFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
     dialogueFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   - name: Ellen
     alias: e
     characterType: 0
-    nameColor: {r: 1, g: 0, b: 0.6683483, a: 0}
-    dialogueColor: {r: 1, g: 1, b: 1, a: 0}
+    nameColor: {r: 1, g: 0, b: 0.6683483, a: 1}
+    dialogueColor: {r: 1, g: 0, b: 0.6666667, a: 1}
     nameFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
     dialogueFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   - name: Benjamin
     alias: b
     characterType: 0
-    nameColor: {r: 0.5144285, g: 1, b: 0.504717, a: 0}
-    dialogueColor: {r: 1, g: 1, b: 1, a: 0}
+    nameColor: {r: 0.5144285, g: 1, b: 0.504717, a: 1}
+    dialogueColor: {r: 0.5137255, g: 1, b: 0.5058824, a: 0}
+    nameFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  - name: Generic
+    alias: gen
+    characterType: 1
+    nameColor: {r: 0.5058824, g: 0.88385004, b: 1, a: 1}
+    dialogueColor: {r: 1, g: 0.5058824, b: 0.97330874, a: 0}
+    nameFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  - name: Female Student 2
+    alias: fs2
+    characterType: 2
+    nameColor: {r: 1, g: 0.5058824, b: 0.5348829, a: 1}
+    dialogueColor: {r: 0.5862469, g: 0.5058824, b: 1, a: 0}
     nameFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
     dialogueFont: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}

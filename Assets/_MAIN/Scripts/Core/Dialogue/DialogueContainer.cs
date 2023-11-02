@@ -8,5 +8,8 @@ namespace Dialoque
         public GameObject root;
         public NameContainer nameContainer = new NameContainer();
         public TextMeshProUGUI diaglogueText;
+
+        public void SetDialogueColor(Color color) => diaglogueText.color = color;
+        public void SetDialogueFont(TMP_FontAsset font) => diaglogueText.font = font;
     }
 }

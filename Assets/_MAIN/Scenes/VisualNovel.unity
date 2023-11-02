@@ -1042,6 +1042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87d1e8e0a349a954e948f4499ea98b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterPanel: {fileID: 794153800}
 --- !u!1 &458554423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,6 +1964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70dce8ce2f3436645b87afbc63aee403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  font: {fileID: 11400000, guid: 0b4ccdafaaed54840b6e0077e6d9fbcc, type: 2}
 --- !u!114 &1081944409
 MonoBehaviour:
   m_ObjectHideFlags: 0
