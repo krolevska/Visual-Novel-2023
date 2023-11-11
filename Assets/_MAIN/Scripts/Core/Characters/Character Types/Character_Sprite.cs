@@ -18,7 +18,7 @@ namespace Characters
 
         private string artAssetsDitrectory = "";
 
-        public override bool isVisible => isRevealing || rootCG.alpha == 1;
+        public override bool isVisible => isRevealing || rootCG.alpha > 0;
         public Character_Sprite(string name, CharacterConfigData config, GameObject prefab, string rootAssetsFolder) : base(name, config, prefab)
         {
             rootCG.alpha = enable_on_start ? 1 : 0;
@@ -110,11 +110,11 @@ namespace Characters
                 layer.SetColor(color);
             }
         }
-        public override IEnumerator ChangingColor(Color color, float speed)
+        public override IEnumerator ChangingColor(float speed)
         {
             foreach (CharacterSpriteLayer layer in layers)
             {
-                layer.TransitionColor(color, speed);
+                layer.TransitionColor(displayColor, speed);
             }
             yield return null;
 
@@ -125,7 +125,7 @@ namespace Characters
             co_changingColor = null;
         }
 
-        public override IEnumerator Highlighting(bool highlight, float speedMultiplier)
+        public override IEnumerator Highlighting(float speedMultiplier)
         {
             Color targetColor = displayColor;
 

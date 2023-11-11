@@ -20,7 +20,11 @@ namespace Characters
         public string characterPrefabPathFormat => $"{characterRootPathFormat}/{characterPrefabNameFormat}";
 
         [SerializeField] private RectTransform _characterPanel = null;
+        [SerializeField] private RectTransform _characterPanel_live2D = null;
+        [SerializeField] private Transform _characterPanel_model3D = null;
         public RectTransform characterPanel => _characterPanel;
+        public RectTransform characterPanelLive2D => _characterPanel_live2D;
+        public Transform characterPanelModel3D => _characterPanel_model3D;
 
         void Awake()
         {
@@ -41,6 +45,8 @@ namespace Characters
         }
         public Character CreateCharacter(string characterName)
         {
+            Debug.Log($"Create {characterName}.");
+
             if (characters.ContainsKey(characterName.ToLower()))
             {
                 Debug.Log($"A character {characterName} already exists!");
@@ -141,7 +147,19 @@ namespace Characters
             foreach (Character character in charactersSortingOrder)
             {
                 character.root.SetSiblingIndex(i++);
+                character.OnSort(i);
             }
+        }
+
+        public int GetCharacterCountFromCharacterType(Character.CharacterType characterType)
+        {
+            int count = 0;
+            foreach (var c in characters.Values)
+            {
+                if (c.config.characterType == characterType)
+                    count++;
+            }
+            return count;
         }
         private class Character_Info
         {

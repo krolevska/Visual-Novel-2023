@@ -54,7 +54,9 @@ namespace Characters
 
             if (prefab != null)
             {
-                GameObject ob = Object.Instantiate(prefab, characterManager.characterPanel);
+                Transform parentPanel = (config.characterType == CharacterType.Live2D ? characterManager.characterPanelLive2D : characterManager.characterPanel);
+               
+                GameObject ob = Object.Instantiate(prefab, parentPanel);
                 ob.name = characterManager.FormatCharacterPath(characterManager.characterPrefabNameFormat, name);
                 ob.SetActive(true);
                 root = ob.GetComponent<RectTransform>();
@@ -175,10 +177,10 @@ namespace Characters
             if (isChangingColor)
                 characterManager.StopCoroutine(co_changingColor);
             Debug.Log($"Transitioning color {color}");
-            co_changingColor = characterManager.StartCoroutine(ChangingColor(displayColor, speed));
+            co_changingColor = characterManager.StartCoroutine(ChangingColor(speed));
             return co_changingColor;
         }
-        public virtual IEnumerator ChangingColor(Color color, float speed)
+        public virtual IEnumerator ChangingColor(float speed)
         {
             Debug.Log("Color changing is not applicable on this character type.");
             yield return null;
@@ -193,7 +195,7 @@ namespace Characters
                 characterManager.StopCoroutine(co_highlighting);
 
             highlighted = true;
-            co_highlighting = characterManager.StartCoroutine(Highlighting(highlighted, speed));
+            co_highlighting = characterManager.StartCoroutine(Highlighting(speed));
 
             return co_highlighting;
         }
@@ -206,12 +208,12 @@ namespace Characters
                 characterManager.StopCoroutine(co_highlighting);
 
             highlighted = false;
-            co_highlighting = characterManager.StartCoroutine(Highlighting(highlighted, speed));
+            co_highlighting = characterManager.StartCoroutine(Highlighting(speed));
 
             return co_highlighting;
         }
 
-        public virtual IEnumerator Highlighting(bool highlight, float speedMultiplier)
+        public virtual IEnumerator Highlighting(float speedMultiplier)
         {
             Debug.Log("Highlighting is not available on this character type.");
             yield return null;
@@ -267,6 +269,12 @@ namespace Characters
             animator.SetBool(animation, state);
             animator.SetTrigger(animation_refresh_trigger);
         }
+
+        public virtual void OnSort(int sortingIndex)
+        {
+            return;
+        }
+
         public enum CharacterType
         {
             Text,
